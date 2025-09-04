@@ -22,7 +22,7 @@ run: $(PROG)
 
 # Rule to debug with Spike
 debug: $(PROG)
-	$(SPIKE) -d --log-commits $(PROG)
+	$(SPIKE) -d --log-commits $(PROG) >> "abs_diff.log"
 
 # Clean up
 clean:

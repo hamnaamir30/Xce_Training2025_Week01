@@ -493,7 +493,7 @@ int main() {
    // task5_3_leak_detector();
 
     // --- Final Task ---
-    /* 
+    
     int a = 5, b = 3;
     long result = test_booth(a, b);
     printf("%d x %d = %ld \n", a, b, result);
@@ -502,7 +502,7 @@ int main() {
     result = test_booth(a, b);
     printf("%d x %d = %ld \n", a, b, result);
 
-    */
+    
 
     return 0;
 }
