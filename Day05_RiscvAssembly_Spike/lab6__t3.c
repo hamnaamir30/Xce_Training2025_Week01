@@ -10,13 +10,12 @@ void _start() {
     int n = 32;
     int msb;
     while(n > 0){
-        msb = (1<<(n-1));
+        msb = (1<<(31));
         msb = Q & msb;
-        msb = (msb >> (n-1));
-        R = R & (~(1<<(n-1)));
+        msb = (msb >> (31));
+        //R = R & (~(1<<(n-1)));
         R = R << 1;
         R = R | msb;
-        Q = Q & (~(1<<(n-1)));
         Q = Q << 1;
         if(R < 0){
             R = R + divisor;
@@ -31,6 +30,9 @@ void _start() {
         }
         }
         n = n-1;
+    }
+    if (R < 0) {
+        R = R + divisor;
     }
     
     tohost = 1;  

@@ -13,7 +13,7 @@ void _start() {
         s_0 = 1<<(n-1);
         msb = dividend & s_0;
         msb = msb >> (n-1);
-        R = R | 1;
+        R = R | msb;
         R = R - divisor;
         if(R < 0){
             R = R + divisor;
