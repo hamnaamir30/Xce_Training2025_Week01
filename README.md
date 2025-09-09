@@ -10,7 +10,7 @@ All labs have been **professionally organized** into individual project folders 
 
 ## Repository Structure
 ```
-├── c-programming-day1/          # C Language Fundamentals
+├── day1/          # C Language Fundamentals
 │   ├── README.md               # Main lab overview
 │   ├── task-1/                 # Basic Syntax and Data Types
 │   ├── task-2/                 # Operators and Calculator
@@ -22,7 +22,7 @@ All labs have been **professionally organized** into individual project folders 
 │   ├── task-8/                 # Enumerations
 │   ├── task-9/                 # Structures
 │   └── task-10/                # Command Line Arguments
-├── c-programming-day2/          # Advanced C Programming
+├── day2/          # Advanced C Programming
 │   ├── README.md               # Main lab overview
 │   ├── task-1/                 # Pointer Basics and Arithmetic
 │   ├── task-2/                 # Pointers and Arrays/Strings
@@ -30,14 +30,14 @@ All labs have been **professionally organized** into individual project folders 
 │   ├── task-4/                 # Advanced Challenge (Linked Lists)
 │   ├── task-5/                 # Dynamic Memory Allocation
 │   └── task-6/                 # Booth's Multiplication Algorithm
-├── shell-lab/                   # Linux Shell Scripting & Makefiles
+├── day3/                   # Linux Shell Scripting & Makefiles
 │   ├── README.md               # Main lab overview
 │   ├── lab-1/                  # Basic Shell Scripting
 │   ├── lab-2/                  # Control Structures
 │   ├── lab-3/                  # Functions and Arrays
 │   ├── lab-4/                  # File Operations
 │   └── lab-5/                  # Makefiles (Basic, Advanced, Scripts)
-├── riscv-lab/                   # RISC-V Assembly Programming
+├── day5/                   # RISC-V Assembly Programming
 │   ├── README.md               # Main lab overview
 │   ├── problem-1/              # Absolute Difference
 │   ├── problem-2/              # Count Set Bits
