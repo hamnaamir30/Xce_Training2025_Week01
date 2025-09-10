@@ -3,6 +3,8 @@
 reverse_array: .word 1, 2, 3, 4, 5, 6, 7, 8
 reverse_size: .word 8
 
+.global _start
+
 .section .text
 
 _start:
@@ -10,11 +12,38 @@ _start:
 	la a0, reverse_array    # Load address of array
 	lw a1, reverse_size     # Load size
 	jal reverse_array_func
+	jal print
     
 	# Code to exit for Spike (DONT REMOVE IT)
 	li t0, 1
 	la t1, tohost
 	sd t0, (t1)
+
+print:
+    # Load array base address and size
+    la   t0, reverse_array          # t0 = base address of array
+    lw   t1, reverse_size     	 # t1 = array size
+    li   t2, 0           	# t2 = loop counter (i = 0)
+
+loop:
+    # Check if we've processed all elements
+    bge  t2, t1, exit       # if i >= array_size, exit loop
+    
+    # Calculate address of current element: base + (i * 4)
+    slli t3, t2, 2          # t3 = i * 4 (shift left by 2 bits)
+    add  t4, t0, t3         # t4 = base address + offset
+    lw   t5, 0(t4)          # t5 = array[i]
+    
+    # Print the current element
+    mv   a0, t5             # Move array element to a0 for printing
+    
+    # Increment loop counter
+    addi t2, t2, 1          # i++
+    j    loop               # Jump back to beginning of loop
+
+exit:
+    # Exit program
+    ret
 
 reverse_array_func:
     # Handle edge cases

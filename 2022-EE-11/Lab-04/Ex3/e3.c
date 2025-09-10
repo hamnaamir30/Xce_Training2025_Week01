@@ -1,4 +1,4 @@
-#include <stdio.h>
+//#include <stdio.h>
 
 void division(int Q, int M) {
     int A = 0; 
@@ -13,21 +13,26 @@ void division(int Q, int M) {
     }
 
     A = (A < 0) ? (A + M) : A;
-    
+    /*
     printf("Remainder: %d\n", A);
     printf("Quotient: %d\n", Q);
     printf("Check: %d\n", A + Q * M);
+    */
 }
 
 int main() {
     int Q, M;
+    /*
     printf("Enter Dividend (Q): ");
     scanf("%d", &Q);
     printf("Enter Divisor (M): ");
     scanf("%d", &M);
-
+    */
+    Q = 57;
+    M = 10;
+    
     if (M == 0) {
-        printf("Error: Division by zero.\n");
+        //printf("Error: Division by zero.\n");
         return 1;
     }
 

@@ -1,4 +1,4 @@
-#include <stdio.h>
+//#include <stdio.h>
 #include <stdint.h>
 
 typedef struct {
@@ -9,13 +9,6 @@ typedef struct {
 // Restoring Division Algorithm in C
 DivResult restoring_divide(uint32_t dividend, uint32_t divisor) {
     DivResult result = {0, 0};
-    
-    // Check for division by zero
-    if (divisor == 0) {
-        result.quotient = 0xFFFFFFFF;  // Error indicator
-        result.remainder = 0xFFFFFFFF;
-        return result;
-    }
     
     uint32_t quotient = 0;
     uint32_t remainder = 0;  // This is the A register
@@ -54,12 +47,13 @@ int main() {
     };
     
     int num_tests = sizeof(test_cases) / sizeof(test_cases[0]);
-    
+    /*
     for (int i = 0; i < num_tests; i++) {
         uint32_t dividend = test_cases[i][0];
         uint32_t divisor = test_cases[i][1];
         
         DivResult result = restoring_divide(dividend, divisor);
+        
         
         printf("Divide %u by %u:\n", dividend, divisor);
         printf("  Quotient: %u\n", result.quotient);
@@ -68,7 +62,8 @@ int main() {
                result.quotient, divisor, result.remainder,
                result.quotient * divisor + result.remainder);
         printf("\n");
+        
     }
-    
+    */
     return 0;
 }

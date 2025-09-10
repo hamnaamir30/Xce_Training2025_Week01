@@ -1,4 +1,4 @@
-#include <stdio.h>
+//#include <stdio.h>
 #include <stdint.h>
 
 // Set a specific bit in a 32-bit number
@@ -36,7 +36,7 @@ uint32_t toggle_bit(uint32_t number, int bit_position) {
     
     return number ^ (1U << bit_position);
 }
-
+/*
 // Helper function to print binary representation
 void print_binary(uint32_t number) {
     for (int i = 31; i >= 0; i--) {
@@ -45,7 +45,8 @@ void print_binary(uint32_t number) {
     }
     printf("\n");
 }
-
+*/
+/*
 // Test function
 int main() {
     printf("=== Bit Operations Test ===\n");
@@ -56,7 +57,7 @@ int main() {
     print_binary(test_number);
     printf("\n");
     
-    // Test set_bit
+    //Test set_bit
     printf("Setting bit 4:\n");
     uint32_t result = set_bit(test_number, 4);
     printf("Result: 0x%08X\n", result);
@@ -101,3 +102,4 @@ int main() {
     
     return 0;
 }
+*/

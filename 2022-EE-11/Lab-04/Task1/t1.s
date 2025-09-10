@@ -14,15 +14,15 @@ result: .word 0
 .section .text
 _start:
  la t0, num1
- lw a0, 0(t0)
+ lw a0, 0(t0) // 15
 
  la t0, num2
- lw a1, 0(t0)
+ lw a1, 0(t0) // 7
 
  sub t1, a0, a1
  sub t2, a1, a0
 
- bge a0, a1, a0_ge
+ bge a0, a1, a0_ge // Absolute difference
 
  mv a2, t2
  j store

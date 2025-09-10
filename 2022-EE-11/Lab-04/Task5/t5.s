@@ -2,6 +2,9 @@
 # Test data for array operations
 test_array: .word 64, 34, 25, 12, 22, 11, 90, 5
 array_size: .word 8
+newline:    .string "\n"                 # Newline character for output
+
+.global _start
 
 .section .text
 
@@ -10,11 +13,38 @@ _start:
 	la a0, test_array       # Load address of test array
 	lw a1, array_size       # Load size
 	jal insertion_sort
+	jal print
     
     	# Code to exit for Spike (DONT REMOVE IT)
 	li t0, 1
 	la t1, tohost
 	sd t0, (t1)
+
+print:
+    # Load array base address and size
+    la   t0, test_array          # t0 = base address of array
+    lw   t1, array_size     	 # t1 = array size
+    li   t2, 0           	# t2 = loop counter (i = 0)
+
+loop:
+    # Check if we've processed all elements
+    bge  t2, t1, exit       # if i >= array_size, exit loop
+    
+    # Calculate address of current element: base + (i * 4)
+    slli t3, t2, 2          # t3 = i * 4 (shift left by 2 bits)
+    add  t4, t0, t3         # t4 = base address + offset
+    lw   t5, 0(t4)          # t5 = array[i]
+    
+    # Print the current element
+    mv   a0, t5             
+
+    # Increment loop counter
+    addi t2, t2, 1          # i++
+    j    loop               # Jump back to beginning of loop
+
+exit:
+    # Exit program
+    ret
 
 insertion_sort:
     # Handle edge cases
